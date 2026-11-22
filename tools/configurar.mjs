@@ -3,7 +3,7 @@
 //
 // instalacion.json (lo escribe Claude durante la entrevista; NO lleva contraseñas):
 // {
-//   "negocio": { "nombre", "descripcion", "identidad", "tono", "color", "idioma", "logo", "logoOscuro?", "favicon?" },
+//   "negocio": { "nombre", "descripcion", "identidad", "tono", "color", "colorOscuro?", "idioma", "logo", "logoOscuro?", "favicon?" },
 //   "dueno": { "nombre", "email" },
 //   "app": { "nombre": "Nombre de la app" },
 //   "firebase": { "apiKey", "authDomain", "projectId", "storageBucket", "messagingSenderId", "appId" },
@@ -33,6 +33,7 @@ writeFileSync(join(ROOT, 'app', '.env'), [
   `VITE_APP_NAME=${r.app?.nombre || `${r.negocio?.nombre || 'Mi'} · Oficina IA`}`,
   `VITE_COMPANY_NAME=${r.negocio?.nombre || 'Mi empresa'}`,
   `VITE_BRAND_COLOR="${color}"`, // entre comillas: sin ellas, '#' inicia un comentario y el color se pierde
+  `VITE_BRAND_COLOR_DARK="${r.negocio?.colorOscuro || color}"`, // acento del tema oscuro
   `VITE_LOGO_URL=${r.negocio?.logo || '/logo.svg'}`,
   `VITE_LOGO_DARK_URL=${r.negocio?.logoOscuro || r.negocio?.logo || '/logo.svg'}`,
   `VITE_FAVICON_URL=${r.negocio?.favicon || r.negocio?.logo || '/logo.svg'}`,

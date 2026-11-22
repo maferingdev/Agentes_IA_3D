@@ -31,7 +31,8 @@ Usa la herramienta de preguntas (AskUserQuestion) cuando las opciones sean cerra
 Reúne:
 
 1. **Negocio:** nombre, a qué se dedica (2-3 líneas), tono de comunicación, idioma.
-2. **Marca:** color principal (hex), descripción corta de la identidad visual, logo opcional
+2. **Marca:** color principal (hex), acento opcional para el tema oscuro (`colorOscuro`, útil si el principal
+   es oscuro: p. ej. un dorado), descripción corta de la identidad visual, logo opcional
    (si da un archivo, cópialo a `app/public/marca/` —carpeta ignorada por git— y usa `/marca/<archivo>`;
    si tiene versión para fondo oscuro, va en `logoOscuro`, y un ícono cuadrado en `favicon`).
 3. **Dueño:** nombre y correo de Google con el que entrará (será el super admin).

@@ -26,7 +26,7 @@ const OfficeView = React.lazy(() => import('./pages/OfficeView.jsx'))
 export const AppContext = createContext()
 export const useApp = () => useContext(AppContext)
 
-import { SUPER_ADMIN_EMAIL, BRAND } from './config.js'
+import { SUPER_ADMIN_EMAIL, BRAND, applyBrand } from './config.js'
 export { SUPER_ADMIN_EMAIL }
 // Versión leída del package.json — se actualiza sola en cada build
 import pkg from '../package.json'
@@ -60,6 +60,7 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
+    applyBrand(theme) // el acento puede cambiar entre tema claro y oscuro
     localStorage.setItem('theme', theme)
   }, [theme])
 

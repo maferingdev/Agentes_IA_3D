@@ -238,7 +238,7 @@ export default function ChatPage() {
                     }}>
                       <div style={{
                         background: mine ? 'var(--purple)' : 'var(--card-2)',
-                        color: mine ? '#fff' : 'var(--text)',
+                        color: mine ? 'var(--on-brand)' : 'var(--text)',
                         padding: '8px 12px',
                         borderRadius: mine ? '14px 14px 4px 14px' : '14px 14px 14px 4px',
                         fontSize: 13.5, lineHeight: 1.5,
